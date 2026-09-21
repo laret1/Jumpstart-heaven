@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://581oekrwutcy"]
+
+[ext_resource type="AudioStream" uid="uid://bnrgxarfnwr5y" path="res://super-mario-death-sound-sound-effect.mp3" id="1_balok"]
+[ext_resource type="Script" uid="uid://ctm3gh0i64j15" path="res://Escenas/01_ground_theme.gd" id="2_alkrj"]
+[ext_resource type="Texture2D" uid="uid://jyj7a4a4topv" path="res://mario gaame over.jpg" id="3_w7bkd"]
+[ext_resource type="FontFile" path="res://ArcadeClassic.ttf-1d5a3c0c3dce93014450608e093128e4.fontdata" id="4_bufif"]
+[ext_resource type="Script" uid="uid://d3sqf8054uqv4" path="res://Escenas/perdiste.gd" id="5_w3kxa"]
+
+[node name="Perdiste" type="Node2D" unique_id=289895391]
+
+[node name="SuperMarioDeathSoundSoundEffect" type="AudioStreamPlayer" parent="." unique_id=1909226978]
+stream = ExtResource("1_balok")
+script = ExtResource("2_alkrj")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1696181215]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(3.64, 3.6)
+texture = ExtResource("3_w7bkd")
+
+[node name="Button" type="Button" parent="." unique_id=1889744010]
+texture_filter = 1
+offset_left = 367.0
+offset_top = 472.0
+offset_right = 511.0
+offset_bottom = 503.0
+scale = Vector2(2.89, 2.89)
+theme_override_fonts/font = ExtResource("4_bufif")
+text = "Volver a Intentar"
+script = ExtResource("5_w3kxa")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

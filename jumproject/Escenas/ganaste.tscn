@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://3ehsb76tjwj4"]
+
+[ext_resource type="AudioStream" uid="uid://padvwy2ufw64" path="res://victory-mario-series-hq-super-smash-bros.mp3" id="1_icwuc"]
+[ext_resource type="Script" uid="uid://ctm3gh0i64j15" path="res://Escenas/01_ground_theme.gd" id="2_uh4v3"]
+[ext_resource type="FontFile" path="res://ArcadeClassic.ttf-1d5a3c0c3dce93014450608e093128e4.fontdata" id="3_d8078"]
+[ext_resource type="Script" uid="uid://d3sqf8054uqv4" path="res://Escenas/perdiste.gd" id="4_wbu58"]
+
+[node name="Ganaste" type="Node2D" unique_id=113651883]
+
+[node name="01_GroundTheme" type="AudioStreamPlayer" parent="." unique_id=411096499]
+stream = ExtResource("1_icwuc")
+script = ExtResource("2_uh4v3")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1449573683]
+offset_left = -27.0
+offset_right = 1163.0
+offset_bottom = 661.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1255316041]
+texture_filter = 1
+offset_left = 405.00003
+offset_top = 117.0
+offset_right = 469.00003
+offset_bottom = 140.0
+scale = Vector2(5, 5)
+theme_override_fonts/font = ExtResource("3_d8078")
+text = "Ganaste"
+
+[node name="Button" type="Button" parent="." unique_id=1387381976]
+texture_filter = 1
+offset_left = 367.0
+offset_top = 472.0
+offset_right = 511.0
+offset_bottom = 503.0
+scale = Vector2(2.89, 2.89)
+theme_override_fonts/font = ExtResource("3_d8078")
+text = "Volver a Jugar"
+script = ExtResource("4_wbu58")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
